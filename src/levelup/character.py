@@ -1,7 +1,7 @@
 from levelup.position import Position
 from levelup.map import GameMap, Direction
 
-DEFAULT_CHARACTER_NAME = "Character"
+DEFAULT_CHARACTER_NAME = "Diva"
 
 
 class InvalidMoveException(Exception):
@@ -13,7 +13,7 @@ class Character:
     map: GameMap = None
     position: Position = None
 
-    def __init__(self, name: str):
+    def __init__(self, name: str = None):
         self.name = name or DEFAULT_CHARACTER_NAME
 
     def enter_map(self, game_map: GameMap):

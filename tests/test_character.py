@@ -15,3 +15,7 @@ class TestCharacter(TestCase):
     def test_custom_name(self):
         testCharacter = Character("Aida Lovelace")
         self.assertEqual(testCharacter.get_name(), "Aida Lovelace")
+
+    def test_default_name(self):
+        testCharacter = Character()
+        self.assertEqual(testCharacter.get_name(), "Diva")
