@@ -17,10 +17,14 @@ class Character:
         self.name = name or DEFAULT_CHARACTER_NAME
 
     def enter_map(self, game_map: GameMap):
-        pass
+        self.map = game_map
+        self.position = self.map.get_positions()[0]
 
     def move(self, direction: Direction):
         pass
 
     def get_name(self) -> str:
         return self.name
+
+    def get_position(self):
+        return self.position

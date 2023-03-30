@@ -21,7 +21,7 @@ class TestMap(TestCase):
         self.assertEqual(newPosition.coordinates[0], 5)
         self.assertEqual(newPosition.coordinates[1], 6)
 
-    def test_calculate_position(self):
+    def test_calculate_position_oob(self):
         tPos = Position(10,10)
         tDirection = Direction.UP
         tWorld = GameMap()
