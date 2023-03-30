@@ -11,3 +11,7 @@ class TestCharacter(TestCase):
         self.assertEqual(testobj.name, expected_name)
         expected_position = None
         self.assertEqual(testobj.position, expected_position)
+
+    def test_custom_name(self):
+        testCharacter = Character("Aida Lovelace")
+        self.assertEqual(testCharacter.get_name(), "Aida Lovelace")
