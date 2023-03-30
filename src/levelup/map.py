@@ -29,3 +29,6 @@ class GameMap:
         self, starting_position: Position, direction: Direction
     ) -> Position:
         pass
+
+    def get_total_positions(self) -> int:
+        return self.size[0] * self.size[1]

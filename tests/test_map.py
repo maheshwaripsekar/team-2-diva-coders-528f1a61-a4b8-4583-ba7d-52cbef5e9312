@@ -4,4 +4,5 @@ from levelup.map import GameMap
 
 class TestMap(TestCase):
     def test_init(self):
-        pass
+        testWorld = GameMap()
+        self.assertEqual(testWorld.get_total_positions(), 100)
