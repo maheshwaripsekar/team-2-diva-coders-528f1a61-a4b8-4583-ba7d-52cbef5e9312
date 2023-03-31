@@ -24,3 +24,11 @@ class TestGameController(TestCase):
         newPosition = testGame.character.get_position()
         self.assertEqual(startPosition.coordinates[0], newPosition.coordinates[0])
         self.assertEqual(startPosition.coordinates[1], newPosition.coordinates[1] -1)
+
+    def test_game_status(self):
+        testGame = GameController()
+        testGame.create_character("Bob the Builder")
+        testGame.start_game()
+        testStatus = testGame.get_status()
+        self.assertEqual(testStatus.character_name, "Bob the Builder")
+        self.assertIsNotNone(testStatus.current_position)

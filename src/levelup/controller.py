@@ -7,9 +7,13 @@ from levelup.position import Position
 
 @dataclass
 class GameStatus:
+    character_name: str
     move_count: int = 0
     running: bool = False
     current_position: Position = None
+
+    def __init__(self):
+        pass
 
     def __str__(self):
         return f"Moved {self.move_count} times, currently on position {self.current_position}"
@@ -47,3 +51,9 @@ class GameController:
 
     def get_total_positions(self):
         return self.map.position_count
+
+    def get_status(self) -> GameStatus:
+        myStatus = GameStatus()
+        myStatus.character_name = self.character.get_name()
+        myStatus.current_position = self.character.get_position()
+        return myStatus
