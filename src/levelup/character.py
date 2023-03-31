@@ -21,7 +21,8 @@ class Character:
         self.position = self.map.get_positions()[0]
 
     def move(self, direction: Direction):
-        pass
+        self.position = self.map.calculate_position(self.position, direction)
+        
 
     def get_name(self) -> str:
         return self.name

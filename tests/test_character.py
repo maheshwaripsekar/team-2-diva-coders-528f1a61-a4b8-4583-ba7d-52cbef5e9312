@@ -34,3 +34,13 @@ class TestCharacter(TestCase):
         self.assertIsNotNone(currentPosition)
         self.assertIsNotNone(currentPosition.coordinates[0])
         self.assertIsNotNone(currentPosition.coordinates[1])
+
+    def test_move(self):
+        testCharacter = Character()
+        testMap = GameMap()
+        testCharacter.enter_map(testMap)
+        startingPosition = testCharacter.get_position()
+        testCharacter.move(Direction.RIGHT)
+        newPosition = testCharacter.get_position()
+        self.assertEqual(startingPosition.coordinates[0], newPosition.coordinates[0] - 1)
+        self.assertEqual(startingPosition.coordinates[1], newPosition.coordinates[1])

@@ -21,8 +21,8 @@ class GameMap:
         self.create_positions()
 
     def create_positions(self) -> None:
-        for x in list(range(0, self.size[0])):
-            for y in list(range(0, self.size[1])):
+        for x in list(range(1, self.size[0] + 1)):
+            for y in list(range(1, self.size[1] + 1)):
                 self.positions.append(Position(x, y))
         self.position_count = len(self.positions)
 
