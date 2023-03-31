@@ -14,3 +14,13 @@ class TestGameController(TestCase):
             testobj.status.current_position,
             None,
         )
+
+    def test_move(self):
+        testGame = GameController()
+        testGame.create_character("Bob the Builder")
+        testGame.start_game()
+        startPosition = testGame.character.get_position()
+        testGame.move(Direction.UP)
+        newPosition = testGame.character.get_position()
+        self.assertEqual(startPosition.coordinates[0], newPosition.coordinates[0])
+        self.assertEqual(startPosition.coordinates[1], newPosition.coordinates[1] -1)
